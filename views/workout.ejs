@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>tread timer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico" sizes="16x16 32x32" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+  <link href='https://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<link href="https://vjs.zencdn.net/7.7.5/video-js.css" rel="stylesheet" />
+
+  <link  href="/css/styl1.css" rel="stylesheet">
+  <script  src="/js/swipe.js"></script>
+
+
+</head>
+
+<body>
+<div class="loader-wrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+  <div class="tinder">
+  <div class="tinder--status">
+    <i class="fa fa-toggle-left"></i>
+    <i class="fa fa-toggle-right"></i>
+  </div>
+
+  <div class="tinder--cards">
+    <div class="tinder--card">
+        <!-- <video autoplay loop muted playsinline nocontrols class="video_js"><source src="https://media.giphy.com/media/MWs2LslS7uPbZlqiaQ/giphy.mp4" type="video/mp4"></video> -->
+        <img src="/workouts/intro.gif"></img>
+            <a href="https://www.instagram.com/ibbu_99/"><h3></h3></a> 
+      <p>Muscular Endurance Workout</p><br>   
+    <h6 id="status">powered by<a href="https://www.instagram.com/treadhill/">@treadhill</a> 
+    </div>
+
+  </div>
+
+  <div class="tinder--buttons">
+    <button id="nope"><i class="fa fa-toggle-left"></i></button>
+    <button id="pp"><i id="pp1" class="fa fa-play"></i></button>
+    <button id="love"><i class="fa fa-toggle-right"></i></button>
+  </div>
+</div>
+
+      <audio id="myAudio">
+  <source src="music.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+      
+<audio id="beep">
+  <source src="countdown.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+  <script src='https://hammerjs.github.io/dist/hammer.min.js'></script>
+
+
+
+</body>
+
+</html>
