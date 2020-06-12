@@ -1,65 +1,644 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Creative - tread Theme</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
-        <!-- Third party plugin CSS-->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">tread</a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/login-page">Login</a></li>
-                           </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- Masthead-->
-        <header class="masthead">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center justify-content-center text-center">
-                    <div class="col-lg-10 align-self-end">
-                        <h1 class="text-uppercase text-white font-weight-bold">Tread Coach App</h1>
-                        <hr class="divider my-4" />
-                    </div>
-                    <div class="col-lg-8 align-self-baseline">
-                        <p class="text-white-75 font-weight-light mb-5">Tread Coach can help you scale your coaching business</p>
-                        <form action="/signup" method="post">
-                            <input class="mb-3 form-control" required type="email" name ="email" placeholder="your email"/>
-                            <input class="mb-3 form-control" required type="password" name ="password" placeholder="your password"/>
-                           <input class = "btn btn-primary" type="submit" value="Sign up for a free trial">
-                            </form>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Level up your Fitness Coaching</title>
+  <link rel = "icon" href =  "image/tread.png" 
+        type = "image/x-icon"> 
+  <!-- Plugins CSS -->
+  <link rel="stylesheet" href="./plugins/bootstrap-4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./plugins/fancybox-master/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="./plugins/aos-animation/aos.css">
+  <!-- fonts -->
+  <link rel="stylesheet" href="./fonts/ep-icon-fonts/css/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'> 
+  <link rel="stylesheet" href="./fonts/fontawesome-5/css/all.min.css">
+  <link rel="stylesheet" href="./fonts/typography-font/typo-fonts.css">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="./css/settings.css">
+  <link rel="stylesheet" href="./css/style.css">
+	<script language="javascript" type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script language="javascript" type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.9/typed.min.js"></script>
+</head>
+
+<body>
+<div class="site-wrapper">
+    <div class="preloader-wrap">
+        <img src ="image/loading.gif" height="150vh" width="150vw">
+    </div>
+    <!-- Header Starts -->
+    <header class="site-header d-none d-lg-block">
+        <div class="container-fluid pl-lg--35 pr-lg--35">
+            <div class="row justify-content-between align-items-center position-relative">
+                <div class="col">
+                    <!-- Brand Logo -->
+                    <div class="brand-logo">
+                        <a href=""><img src="image/main-logo.png" alt="" /></a>
                     </div>
                 </div>
+                <!-- Menu Block -->
+                <div class="col">
+                    <div class="main-navigation ">
+                        <ul class="main-menu">
+                            <li class="menu-item"><a href="#product">Product</a></li>
+
+                            <li class="menu-item"><a href="#price-section">Pricing</a></li>
+                        </ul>
+                    </div>
+                    <div class="mobile-menu"></div>
+                </div>
+
+                <!-- Button Block -->
+                <div class="col">
+                    <div class="header-btns">
+                                        </div>
+                </div>
             </div>
-        </header>
-        <!-- Footer-->
-        <footer class="bg-light py-5">
-            <div class="container"><div class="small text-center text-muted">Copyright © 2020 - tread</div></div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+        </div>
+    </header>
+
+    <!-- Mobile menu Header Starts -->
+    <header class="mobile-header d-lg-none">
+    <div class="container">
+        <div class="row align-items-center">
+        <div class="col-md-4 col-7">
+            <a href="index.html" class="site-brand">
+                <img src="./image/main-logo.png" alt="">
+            </a>
+        </div>
+        <div class="col-md-8 col-5 text-right">
+            <div class="header-top-widget">
+                <ul class="header-links">
+                    <li class="single-link">
+                    <a href="#" class="link-icon hamburger-icon off-canvas-btn"><i class="icon icon-menu-34"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </div>
+    </header>
+    <!--Off Canvas Navigation Start-->
+    <aside class="off-canvas-wrapper">
+        <div class="btn-close-off-canvas">
+            <i class="icon icon-simple-remove"></i>
+        </div>
+        <div class="off-canvas-inner">
+            <!-- mobile menu start -->
+            <div class="mobile-navigation">
+                <!-- mobile menu navigation start -->
+                <nav class="off-canvas-nav">
+                    <ul class="mobile-menu">
+                        <li><a href="#product" class="close-off-canvas">Product</a></li>
+                        <li><a href="#pricing-section" class="close-off-canvas">Pricing</a></li>
+                    </ul>
+                </nav>
+                <!-- mobile menu navigation end -->
+            </div>
+            <!-- mobile menu end -->
+
+            <!-- Header buttons start -->
+            <div class="header-btns offcanvas">
+                <div class="header-btns">
+                    <a href="#" class="btn btn--primary hvr-shine"data-toggle="modal" data-target="#scheduleDemo">Schedule Demo</a>
+                    <a href="#price-section" class="btn btn--primary hvr-shine">Start free trial</a>
+                </div>
+            </div>
+            <!-- Header buttons end -->
+        </div>
+    </aside>
+    <!--Off Canvas Navigation End-->
+
+    <!-- Banner Section -->
+    <section class="hero-area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-7 col-lg-8 col-md-10">
+                    <div class="hero-content">
+                        <h1 class="title-h2">Get your Personal Training </h1><div class="yellow bg-warning">
+    <span class="typedC h1"></span>
+</div> <br>
+                        <p>Build intuitive workouts · Engage with visual workouts · Track your c</p>
+                        <div class="hero-btn">
+                            <a href="#" class="btn btn--primary hvr-shine"data-toggle="modal" data-target="#scheduleDemo">Schedule Demo</a>
+                            <span class="text--info">Interested? Let us show you how tread can help your business!</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="dashboard-img" data-aos="fade-up" data-aos-duration='1500' data-aos-once="true">
+                        <img src="./image/homepage.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="hero-shape"><img src="image/hero-shape.png" alt=""></div> -->
+    </section>
+
+    <!-- Feature Section -->
+    <div class="feature-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-9 col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration='1500' data-aos-once="true" data-aos-delay="300">
+                    <div class="widget01 feature--widget">
+                        <div class="widget__icon">
+                            <span><img src ="./image/support.svg" width="70px" height="70px"></img></span>
+                        </div>
+                        <div class="widget__body divider--right">
+                            <h3 class="widget__heading h6">Single View for Client Management</h3>
+                            <p>A single screen to monitor all your clients at once</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-9 col-md-6 col-lg-4"  data-aos="fade-up" data-aos-duration='1500' data-aos-once="true" data-aos-delay='800'>
+                    <div class="widget01 feature--widget">
+                        <div class="widget__icon">
+                            <span><img src ="./image/sales.png" width="70px" height="70px"></img></span>
+                        </div>
+                        <div class="widget__body divider--right">
+                            <h3 class="widget__heading h6">Scale Your Coaching Business</h3><br>
+                            <p>Reduce time spent on admin tasks and focus on coaching</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-9 col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration='1500' data-aos-once="true" data-aos-delay='1300'>
+                    <div class="widget01 feature--widget">
+                        <div class="widget__icon">
+                            <span><img src ="./image/gym.svg" width="80px" height="80px"></img></span>
+                        </div>  
+                        <div class="widget__body">
+                            <h3 class="widget__heading h6">Easy-To-Follow Workouts</h3>
+                            <p>Move over from PDFs and Whatsapp messages to Visual Workouts</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ <!-- Video Section -->
+    <div class="section-padding video-bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-8 col-lg-10">
+                    <div class="video-content">
+                        <a data-fancybox href="https://www.youtube.com/watch?v=Zeei3JXpLi4" class="video-btn" data-aos="zoom-in" data-aos-duration='1000' data-aos-once="true"><i class="icon icon-triangle-right-17-2"></i></a>
+                        <h2 class="title">Watch how tread can help modernize your coaching business</h2>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+
+<br><br>
+    <!-- CTA Section -->
+    <div class ="bg-warning pt-5 pb-5">
+        <div class="container">
+            <div class="row justify-content-center ">
+                <div class="col-xl-9 col-lg-9 col-md-12">
+                    <div class="cta-wrapper">
+                        <h3 class="title mt--20" data-aos="fade-right" data-aos-duration='1500' data-aos-once="true">Manage your coaching in one place</h3>
+                        <div class="button" data-aos="fade-left" data-aos-duration='1500' data-aos-once="true">
+                            <a href="#price-section" class="btn btn--primary mt--20  hvr-shine">Start free trial</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Content Section -->
+    <div class="content-section bg-light-white section-padding" id="product">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6">
+                    <div class="content-img content-img-group-1">
+                        <div class="image-1 d-none d-md-block " data-aos="fade-left" data-aos-duration='1500' data-aos-once="true">
+                             <img src="./image/rsz_programs.png" alt="">
+                        </div>
+                        <div class="image-2 image-overlay d-none d-md-block" data-aos="fade-right" dat data-aos-duration="1500" data-aos-once="true">
+                             <img src="./image/rsz_assign_workout.png" alt="">
+                        </div>
+                        <div class="image-mobile d-md-none">
+                             <img src="./image/mobile_1.PNG" alt="">
+                        </div>
+                     </div>
+                </div>
+                <div class="col-xl-5 offset-xl-1 col-lg-6 col-md-6">
+                    <div class="content-section-text">
+                        <h2 class="title">Automate your <br class="d-none d-xs-block"> Plans and Programs</h2>
+                        <p>Our trainer dashboard gives you a big-picture view of a month in the past or in advance, so you know what your clients did or need while you're designing ahead.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Content Section 2 -->
+    <div class="content-section section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-7 col-lg-6 col-md-6 order-md-2">
+                    <div class="content-img content-img-group-2">
+                       <div class="image-1 d-none d-md-block" data-aos="fade-right" data-aos-duration='1500' data-aos-once="true">
+                            <img src="./image/rsz_1capture.png" alt="">
+                       </div>
+                       <div class="image-2 d-none d-md-block" data-aos="fade-left" data-aos-duration='1500' data-aos-once="true">
+                            <img src="./image/rsz_completed.png" alt="">
+                       </div>
+                       <div class="image-mobile d-md-none">
+                            <img src="./image/mobile_2.PNG" alt="">
+                       </div>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-lg-6 col-md-6 order-md-1">
+                    <div class="content-section-text">
+                        <h2 class="title">Redefine how your <br class="d-none d-xs-block">clients workout!</h2>
+                        <p> Your clients can easily follow your workout plans and quickly log results all from the tread mobile interface.</p>
+                        <a href="#" class="btn btn-primary--opacity hvr-bounce-to-right" data-toggle="modal" data-target="#scheduleDemo">Schedule Demo</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<!-- Content Section 3 -->
+    <div class="content-section bg-light-white section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6">
+                    <div class="content-img content-img-group-1">
+                        <div class="image-1 d-none d-md-block " data-aos="fade-left" data-aos-duration='1500' data-aos-once="true">
+                             <img src="./image/client_list.PNG" alt="">
+                        </div>
+                        <div class="image-2 image-overlay d-none d-md-block" data-aos="fade-right" dat data-aos-duration="1500" data-aos-once="true">
+                             <img src="./image/exercise_lib.png" alt="">
+                        </div>
+                        <div class="image-mobile d-md-none">
+                             <img src="./image/mobile_3.PNG" alt="">
+                        </div>
+                     </div>
+                </div>
+                <div class="col-xl-5 offset-xl-1 col-lg-6 col-md-6">
+                    <div class="content-section-text">
+                        <h2 class="title">Get rid of spreadsheets</h2>
+                        <p>When your client list grows, you shouldn’t be managing more spreadsheets for hours. <br>You can stop the time-sucking admin tasks and start providing a professional, one-to-one, personalized coaching experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+    <!-- Pricing Section -->
+    <div id="price-section" class="pricing-section section-padding-top mb--60 mb-md--80">
+        <div class="pricing-section-bg">
+            <div class="pricing-shape">
+                <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 72" version="1.1">
+                    <path d="M0 9.21563C0 9.21563 486.438 -2.64935 790.035 31.8207C1093.63 66.2908 1343.93 92.2333 1600 44.5336L1600 0L0 0L0 9.21563Z" transform="translate(0 0.5)" id="Path-4" fill="#D8D8D8" stroke="none" class="pricing-shape-color"/>
+                </svg>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9 col-xl-8 mb--35">
+                    <div class="section-title">
+                        <h2 class="title h3">Our Simple Pricing</h2>
+                        <p>Pay as you scale your remote coaching business with us</p>
+                    </div>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                    <div data-tab-target="#pricing-tab-1" class="btn--toggle">
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                            <p>Monthly</p>
+                            <p>Yearly</p>
+                        </label>
+                    </div>                    
+                </div>
+                <div class="col-12">
+                    <div class="custom-tab-wrapper monthly" id="pricing-tab-1">
+                        <div class="row mb-d-30 justify-content-center">
+                            <div class="col-xl-4 col-lg-5 col-md-6">
+                                <div class="card card-p01" data-aos="fade-up" data-aos-duration='1500' data-aos-once="true" data-aos-delay="300">
+                                    <div class="card-head">
+                                        <h6>Basic</h6>
+                                        <h2>
+                                            <span class="small-title">Rs.</span>
+                                            <span class="big-txt price-default">500</span>
+                                            <span class="big-txt price-dynamic" data-monthly='500' data-yearly='350'></span>
+                                            <span class="devider">/</span>
+                                            <span class="month">month</span>
+                                        </h2>
+                                        <p>For trainers starting remote coaching</p>
+                                    </div>
+                        
+                                    <div class="card-content">
+                                        <ul class="pricing-list">
+                                            <li><span><i class="icon icon-check-2"></i></span>Upto 5 Clients</li>
+                                            <li><span><i class="icon icon-check-2"></i></span>Rs.100 per extra Client</li>
+                                        </ul>
+                                        <div class="card-btn">
+                                            <a href="" class="btn btn--primary hvr-shine" data-toggle="modal" data-target="#basicModal">Start free 30 days trial</a>
+                                        </div>
+                                        <p>No card required</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-5 col-md-6">
+                                <div class="card card-p01 card-active" data-aos="fade-up" data-aos-duration='1500' data-aos-once="true" data-aos-delay="800">
+                                    <div class="card-head">
+                                        <h6>Pro</h6>
+                                        <h2>
+                                            <span class="small-title">Rs.</span>
+                                            <span class="big-txt price-default">2000</span>
+                                            <span class="big-txt price-dynamic" data-monthly='2000' data-yearly='1800'></span>
+                                            <span class="devider">/</span>
+                                            <span class="month">month</span>
+                                        </h2>
+                                        <p>For Remote Trainers with 20+ Clients</p>
+                                    </div>
+                        
+                                    <div class="card-content">
+                                        <ul class="pricing-list">
+                                            <li><span><i class="icon icon-check-2"></i></span>Unlimited Clients</li>
+                                            <li><span><i class="icon icon-check-2"></i></span>Unlimited Programs</li>
+
+                                        </ul>
+                                        <div class="card-btn">
+                                            <a href="" class="btn btn--primary hvr-shine" data-toggle="modal" data-target="#basicModal">Start free 30 days trial</a>
+                                        </div>
+                                        <p>No card required</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+<!-- sign up modal -->
+<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="row justify-content-center">
+            <div class="col-lg-12 col-xl-12">
+              <div class="hero-content" style="color:black;">
+                  <h2 style="font-weight: 500;">You've caught us early!</h2><br>
+                  <p style="color:black;line-height:1.5em;">We're working on the finishing touches for our product. Subscribe to join our early users.</p>
+              </div>
+            </div>
+            
+            <div class="col-lg-7 col-xl-6">
+                <div class="subscription-form">
+                  <form action="">
+                        <div class="form-group">
+                          <input type="text" class="form-control pb-03" placeholder="Enter your email"><br>
+                          <button type="submit" id="mc-embedded-subscribe" class="btn btn--primary hvr-shine pt--4" style ="width:100%;  ">Subscribe</button>
+                        </div>
+                  </form>
+                </div>
+            </div>
+        </div>
+</div>
+</div>
+</div> 
+        </div>
+
+
+<!-- schedule demo modal -->
+<div class="modal fade" id="scheduleDemo" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+      <div class="row justify-content-center">
+            <div class="col-lg-12 col-xl-12">
+              <div class="hero-content" style="color:black;">
+                  <h2 style="font-weight: 500;">Let us show you the magic</h2><br>
+                  <p style="color:black;line-height:1.5em;">Sign up for a personalized demo of tread for your coaching business! We will reach out to you with more details</p>
+              </div>
+            </div>
+            
+            <div class="col-lg-7 col-xl-6">
+                <div class="subscription-form">
+                  <form action="">
+                        <div class="form-group">
+                          <input type="text" class="form-control pb-03" placeholder="Enter your email"><br>
+                          <button type="submit" id="mc-embedded-subscribe" class="btn btn--primary hvr-shine pt--4" style ="width:100%;  ">Schedule </button>
+                        </div>
+                  </form>
+                </div>
+            </div>
+        </div>
+</div>         
+</div>        
+</div>        
+</div>
+
+
+    <!-- Footer Section -->
+    <footer class="section-padding-top footer-bg shape-holder">
+        <div class="container">
+             <div class="col-lg-12 col-md-3 col-sm-5 mb-5">
+                  <div class="row justify-content-center space-db--10">
+                        <p class="mb-0" style="text-align:center;color:white">Get in touch with us : <br> contact@treadapp.co</p>
+                 </div>
+                    </div>
+ <div class="col-lg-12 col-md-3 mb--10">
+                        <ul class="footer-list social-list row justify-content-center   ">
+                            <li><a href="https://instagram.com/treadhill"><i class="icon big-icon icon-logo-instagram"></i></a></li>
+                        </ul>
+                    </div>
+            <div class="col-lg-12 col-md-3 col-sm-5 pt--10 pt-md--40 pb--30">
+                <div class="row justify-content-center space-db--10">
+                        <p class="mb-02"style="text-align:center;color:white">© 2020 Tread. All rights reserved</p>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="footer-shapes">
+                <div class="shape-1">
+                    <img src="./image/footer-shape.svg" alt="">
+                </div>
+                <div class="shape-2">
+                    <!-- <img src="./image/footer-shape-white.svg" alt=""> -->
+                </div>
+        </div>
+    </footer>
+</div>
+   
+  <!-- Vendor JS-->
+  <script src="./plugins/jquery/jquery.min.js"></script>
+  <script src="./plugins/jquery/jquery-migrate.min.js"></script>
+  <script src="./plugins/bootstrap-4.3.1/js/bootstrap.bundle.js"></script>
+
+  <!-- Plugins JS -->
+  <script src="./plugins/fancybox-master/jquery.fancybox.min.js"></script>
+  <script src="./plugins/aos-animation/aos.js"></script>
+
+  <!-- Custom JS -->
+     <script>
+    $(document).ready(function(){
+	typeWords();
+});
+
+function typeWords() {
+	new Typed(".typedC", {
+		/**
+		* @property {array} strings strings to be typed
+		* @property {string} stringsElement ID of element containing string children
+		*/
+		strings: ['Online','Online', 'Scalable', 'Profitable'],
+		stringsElement: null,
+
+		/**
+		* @property {number} typeSpeed type speed in milliseconds
+		*/
+		typeSpeed: 50,
+
+		/**
+		* @property {number} startDelay time before typing starts in milliseconds
+		*/
+		startDelay: 0,
+
+		/**
+		* @property {number} backSpeed backspacing speed in milliseconds
+		*/
+		backSpeed: 0,
+
+		/**
+		* @property {boolean} smartBackspace only backspace what doesn't match the previous string
+		*/
+		smartBackspace: true,
+
+		/**
+		* @property {boolean} shuffle shuffle the strings
+		*/
+		shuffle: false,
+
+		/**
+		* @property {number} backDelay time before backspacing in milliseconds
+		*/
+		backDelay: 700,
+
+		/**
+		* @property {boolean} fadeOut Fade out instead of backspace
+		* @property {string} fadeOutClass css class for fade animation
+		* @property {boolean} fadeOutDelay Fade out delay in milliseconds
+		*/
+		fadeOut: false,
+		fadeOutClass: 'typed-fade-out',
+		fadeOutDelay: 500,
+
+		/**
+		* @property {boolean} loop loop strings
+		* @property {number} loopCount amount of loops
+		*/
+		loop: true,
+		loopCount: Infinity,
+
+		/**
+		* @property {boolean} showCursor show cursor
+		* @property {string} cursorChar character for cursor
+		* @property {boolean} autoInsertCss insert CSS for cursor and fadeOut into HTML <head>
+		*/
+		showCursor: true,
+		cursorChar: '',
+
+		/**
+		* @property {string} attr attribute for typing
+		* Ex: input placeholder, value, or just HTML text
+		*/
+		attr: null,
+
+		/**
+		* @property {boolean} bindInputFocusEvents bind to focus and blur if el is text input
+		*/
+		bindInputFocusEvents: false,
+
+		/**
+		* @property {string} contentType 'html' or 'null' for plaintext
+		*/
+		contentType: 'html',
+
+		/**
+		* All typing is complete
+		* @param {Typed} self
+		*/
+		onComplete: (self) => {},
+
+		/**
+		* Before each string is typed
+		* @param {number} arrayPos
+		* @param {Typed} self
+		*/
+		preStringTyped: (arrayPos, self) => {},
+
+		/**
+		* After each string is typed
+		* @param {number} arrayPos
+		* @param {Typed} self
+		*/
+		onStringTyped: (arrayPos, self) => {},
+
+		/**
+		* During looping, after last string is typed
+		* @param {Typed} self
+		*/
+		onLastStringBackspaced: (self) => {},
+
+		/**
+		* Typing has been stopped
+		* @param {number} arrayPos
+		* @param {Typed} self
+		*/
+		onTypingPaused: (arrayPos, self) => {},
+
+		/**
+		* Typing has been started after being stopped
+		* @param {number} arrayPos
+		* @param {Typed} self
+		*/
+		onTypingResumed: (arrayPos, self) => {},
+
+		/**
+		* After reset
+		* @param {Typed} self
+		*/
+		onReset: (self) => {},
+
+		/**
+		* After stop
+		* @param {number} arrayPos
+		* @param {Typed} self
+		*/
+		onStop: (arrayPos, self) => {},
+
+		/**
+		* After start
+		* @param {number} arrayPos
+		* @param {Typed} self
+		*/
+		onStart: (arrayPos, self) => {},
+
+		/**
+		* After destroy
+		* @param {Typed} self
+		*/
+		onDestroy: (self) => {}
+	});
+}
+</script>
+  <script src="./js/active.js"></script>
+</body>
+
 </html>
