@@ -9,10 +9,7 @@ var expressSession = require('express-session');
 var passport = require('passport');
 var localStrategy = require('passport-local').Strategy;
 require('./models');
-
-var User = mongoose.model('User'); 
-
-mongoose.connect('mongodb://localhost:27017/kwan-db',{ useNewUrlParser: true, useUnifiedTopology: true });
+var compression = require('compression');
 
 var app = express();
 
@@ -26,6 +23,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join('public')));
+app.use(compression());
+
 
 app.get('/',function(req, res, next) {
     res.render('index');
