@@ -26,6 +26,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(__dirname + '/public'))
+if(process.env.NODE_ENV === 'production') {
+  app.use((req, res, next) => {
+    if (req.header('x-forwarded-proto') !== 'https')
+      res.redirect(`https://${req.header('host')}${req.url}`)
+    else
+      next()
+  })
+}
 
 
 app.get('/',function(req, res, next) {
@@ -55,15 +63,7 @@ module.exports = app;
 
 
 //Heroku Build Process - Serve static assets if in production
-if(process.env.NODE_ENV === 'production') {
 
-  app.use(express.static('client/build'));
-
-  app.get('*', (request, response) => {
-      response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-  });
-
-}
 
 //Define Port and Start server
 const port = process.env.PORT || 5000;
