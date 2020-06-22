@@ -43,6 +43,11 @@ app.get('/success',function(req, res, next) {
   res.render('success');
 });
 
+app.get('/workout',function(req, res, next) {
+  res.render('workout');
+});
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
