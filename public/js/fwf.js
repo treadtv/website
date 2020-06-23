@@ -158,8 +158,8 @@ function onPlayerReady(event) {
 }
 var videoisPlaying = 0;
 
-function loadVideo() {
-  for (var i=0;i<items.length;i++){
+function loadVideo(i) {
+  console.log("player",i,"is loaded");
    window.YT.ready(function() {
     player[i] = new window.YT.Player("ytplayer"+i, {
       height: "250",
@@ -196,7 +196,7 @@ function loadVideo() {
             } 
             if (pp1.classList[1] == "fa-play" && e.data === YT.PlayerState.PAUSED) {
               
-              //pp.click();
+              pp.click();
               console.log("video is paused, timer is paused -> Timer should continue");
               } 
           
@@ -220,7 +220,7 @@ function loadVideo() {
           
       }
     });
-  });}
+  });
 }
 
 function seek(sec,i){
@@ -232,7 +232,25 @@ function seek(sec,i){
 
 $(document).ready(function() {
   $.getScript("https://www.youtube.com/iframe_api", function() {
-    loadVideo();
+    loadVideo(0);
+    loadVideo(1);
+    loadVideo(2);
+    var i = 3;                  //  set your counter to 1
+    var length = items.length;
+
+function myLoop() {         //  create a loop function
+  setTimeout(function() {   //  call a 3s setTimeout when the loop is called
+    console.log('hello');   //  your code here
+    loadVideo(i);
+    i++;                    //  increment the counter
+    if (i < length) {           //  if the counter < 10, call the loop function
+      myLoop(i);             //  ..  again which will trigger another 
+    }                       //  ..  setTimeout()
+  }, 5000)
+}
+
+myLoop();  
+
   });
 });
 
