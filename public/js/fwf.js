@@ -20,7 +20,8 @@ var json = {"items": [
 "exerciseName": "Circuit 1: Burpees",
 "exerciseGif":  "dZgVxmf6jkA", 
 "reps":"45",
-"calories" :"1"
+"calories" :"1",
+"upnext" : "1"
 },
 {
 "exerciseName": "Rest",
@@ -46,7 +47,8 @@ var json = {"items": [
 "exerciseName": "Circuit 1: Jumping Jacks",
 "exerciseGif":  "iSSAk4XCsRA",
 "time":"45",
-"calories" :"1"
+"calories" :"1",
+"upnext" : "1"
 },
 {
 "exerciseName": "Rest",
@@ -131,28 +133,35 @@ else
 {var p = document.createElement("div");
 p.className +='controlls';
 var span = document.createElement("span");
-}
-if(items[i].reps){
 span.innerHTML = items[i].reps+" reps";
 p.append(span);}
 
 var p2 = document.createElement("p"); 
 if(items[i].upnext && i+1<items.length){
-// console.log(items[i].upnext,items[i+1].exerciseName.split(":"));
+// console.log("enters",items[i].upnext,items[i+1].exerciseName.split(":"));
 if(items[i+1].exerciseName.split(":")[1]){
-p2.innerHTML += "<br>UP NEXT : " + items[i+1].exerciseName.split(":")[1];}
+  // console.log(": in next");
+p2.innerHTML += "UP NEXT : " + items[i+1].exerciseName.split(":")[1];}
 else {
-p2.innerHTML += "<br>UP NEXT : " + items[i+1].exerciseName;
+p2.innerHTML += "UP NEXT : " + items[i+1].exerciseName;
+// console.log("no :",p2);
 }
 p2.style.color = "brown";
-   p2.style.fontFamily = "Oswald";
+p2.style.width="100%";
+p2.style.backgroundColor = "#f0f8ff";
+p2.style.paddingTop ="0.8em";
+p2.style.paddingBottom ="0.8em";
 }
+var p3 = document.createElement("p");
+p3.classList += "status";
 div.appendChild(h3);
 div.appendChild(img);
 div.appendChild(br1);
 div.appendChild(p);
 div.appendChild(br);
-div.appendChild(p);
+div.appendChild(p2);
+div.appendChild(p3);
+// console.log("append",div);
 news.appendChild(div);
 }
 /*initializing content above*/
@@ -237,8 +246,7 @@ $(document).ready(function() {
   $.getScript("https://www.youtube.com/iframe_api", function() {
     loadVideo(0);
     loadVideo(1);
-    loadVideo(2);
-    var i = 3;                  //  set your counter to 1
+    var i = 2;                  //  set your counter to 1
     var length = items.length;
 
 function myLoop() {         //  create a loop function
@@ -289,6 +297,7 @@ pp.onclick = function charge() {
 
 //  console.log("video is playing", videoisPlaying);
 cords = document.querySelectorAll('.tinder--card:not(.removed)'); 
+var status = cords[0].querySelectorAll('.status')[0];
 var parent = cords[0].parentNode;
 // The equivalent of parent.children.indexOf(child)
 var index = Array.prototype.indexOf.call(parent.children, cords[0]);
@@ -299,16 +308,18 @@ love.click();
 if(play!=1)
 //timer is played
 {
+  
+ status.innerHTML = "";
 if(videoisPlaying==1){
 console.log("video should be paused");
 player[index-1].pauseVideo();
 }
-
 // player[index-1].playVideo();//index is always one behind the playe index
 
   pp1.classList.remove("fa-play"); 
 pp1.classList.remove("fa-close"); 
   pp1.classList.add("fa-pause");
+
   play = 1;
 clearInterval(timeElapsed);
 clearInterval(time);
@@ -324,12 +335,10 @@ time = setInterval( function() {
 }
 //timer is paused
 else{
- 
+ status.innerHTML = "<h3>Paused</h3>";
 if(videoisPlaying==1){
 console.log("nothing should be done");
 }
-
- 
 // player[index-1].pauseVideo();//index is always one behind the player index
   pp1.classList.remove("fa-pause"); 
 pp1.classList.remove("fa-close"); 
@@ -357,6 +366,7 @@ var love = document.getElementById('love');
 function countdownSeconds(index) {
    var news = document.getElementsByClassName("tinder--card");
 var cards = document.querySelectorAll('.tinder--card:not(.removed)');
+cards[0].querySelectorAll('.cards').innerHTML = "";
    if (cards.length == 0)
    {
        theEnd();
@@ -393,7 +403,6 @@ var prevRemoved;
 
 function initCards(card, index) {
 var newCards = document.querySelectorAll('.tinder--card:not(.removed)');
-
   if (newCards.length == 0)
    {
        theEnd();
@@ -466,19 +475,20 @@ if (love) {
  card.style.transform = 'translate(' + moveOutWidth + 'px, -100px) rotate(-30deg)'; 
    clearInterval(time);
 
-   if(last!=1 && card2.childElementCount>4){
-   if(card2.childNodes[4].nodeName == 'DIV' && card2.childNodes[4].classList.contains('controlls') ){
-    if (card2.childNodes[4].childNodes[0].classList.contains('display-remain-time')){
-   // console.log(card2.childNodes[4].innerText);
+   if(last!=1 && card2.childElementCount>6){
+   if(card2.childNodes[3].nodeName == 'DIV' && card2.childNodes[3].classList.contains('controlls') ){
+    if (card2.childNodes[3].childNodes[0].classList.contains('display-remain-time')){
+
    //      console.log(document.getElementsByClassName("tinder--card")[index].childNodes);
    //      console.log(json.items[index-1],index,"passsed");
    seconds = json.items[index-1].time;
-   // player[index-1].playVideo();
+      if(index-2>=0){
+    player[index-2].pauseVideo();}
    time = setInterval( function() { 
        countdownSeconds(index); }, 1000 );
  }}}
    else {
-     // player[index-2].pauseVideo();
+     player[index-2].pauseVideo();
      // player[index-1].playVideo();
 
        //  console.log(json.items[index1-1],index1,"passsed");
@@ -495,9 +505,9 @@ if (love) {
    time=null;
    }
    
-   if(cRemoved.childElementCount>4){
-   if(cRemoved.childNodes[4].nodeName == 'DIV' && cRemoved.childNodes[3].classList.contains('controlls') ){
-    if (cRemoved.childNodes[4].childNodes[0].classList.contains('display-remain-time')){ 
+   if(cRemoved.childElementCount>6){
+   if(cRemoved.childNodes[3].nodeName == 'DIV' && cRemoved.childNodes[3].classList.contains('controlls') ){
+    if (cRemoved.childNodes[3].childNodes[0].classList.contains('display-remain-time')){ 
    if(last!=1){
    seconds = json.items[index-3].time;
    clearInterval(time);
@@ -510,7 +520,7 @@ if (love) {
    seconds = json.items[index1-2].time;
    // seek(0,index1-3);
    // seek(0,index1-2);
-   // player[index1-2].pauseVideo();
+    player[index1-2].pauseVideo();
    // player[index1-3].playVideo();
    clearInterval(time);
    time = setInterval( function() {
