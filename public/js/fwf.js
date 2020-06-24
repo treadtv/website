@@ -1,88 +1,50 @@
-
-var json = {"items": [
-    
- 
-  {
-"exerciseName": "Circuit 1: Alternate Forward Lunges",
-"exerciseGif":  "Fyc5QqXEEQE",
-"time":"12",
-"calories" :"1",
-      "upnext" : "1"
-},
+var url = window.location.href;
+var def = url.split("/")[4];
+console.log(url,def);
+$.ajax({
+  url: "https://cors-anywhere.herokuapp.com/https://boiling-depths-05067.herokuapp.com/submit/workout/"+def,
+  type: "GET",
+  crossDomain: true,
+  dataType: "json",
+  success: function (response) {
+      console.log(response); 
+      $(".loader-wrapper").fadeOut("slow");
+$('.tinder').css("visibility", "visible");
+var items = response.data.items;
+var json = response.data;
+var title = document.getElementById('title');
+title.innerHTML = json.timerName;
+var desc = document.getElementById('desc');
+if(json.timerDescription){
+desc.innerHTML = json.timerDescription;}
+var dupITEMS = items.length;
+for(var j = 0; j < items.length; j++) 
 {
-"exerciseName": "Rest",
-"exerciseGif":  "dZgVxmf6jkA",  
-"time":"15",
-"calories" :"1",
-"upnext" : "1"
-},
-{
-"exerciseName": "Circuit 1: Burpees",
-"exerciseGif":  "dZgVxmf6jkA", 
-"reps":"45",
-"calories" :"1",
-"upnext" : "1"
-},
-{
-"exerciseName": "Rest",
-"exerciseGif": "dZgVxmf6jkA",
-"time":"15",
-"calories" :"1",
-"upnext" : "1"
-},
-{
-"exerciseName": "Circuit 1: Butt Kicks",
-"exerciseGif":  "dtvAxibgYQ",
-"time":"45",
-"calories" :"1"
-},
-{
-"exerciseName": "Rest",
-"exerciseGif": "dtvAxibgYQ",
-"time":"15",
-"calories" :"1",
-"upnext" : "1"
-} ,
-{
-"exerciseName": "Circuit 1: Jumping Jacks",
-"exerciseGif":  "iSSAk4XCsRA",
-"time":"45",
-"calories" :"1",
-"upnext" : "1"
-},
-{
-"exerciseName": "Rest",
-"exerciseGif": "iSSAk4XCsRA",
-"time":"15",
-"calories" :"1",
-"upnext" : "1"
-} ,       {
-"exerciseName": "Circuit 2: Mountain Climbers",
-"exerciseGif":  "De3Gl-nC7IQ",
-"time":"45",
-"calories" :"1",
-      "upnext" : "1"
-},
-{
-"exerciseName": "Rest",
-"exerciseGif": "De3Gl-nC7IQ",
-"time":"15",
-"calories" :"1",
-"upnext" : "1"
-},
-{
-"exerciseName": "Circuit 2: Squats",
-"exerciseGif":  "UXJrBgI2RxA",
-"time":"45",
-"calories" :"1"
+console.log(items[j],j);
+if(items[j].reps=="0"){
+delete items[j].reps;
 }
-]};
+if(items[j].time=="0"){
+delete items[j].time;
+}
+if(items[j].rest!='0'){
+var time = items[j].rest.toString();
+var item =  {
+"excerciseName": "Rest",
+"time":time,
+"calories" :"1",
+"upnext" : "1",
+"rest" : "0"
+};
+items.splice(j+1,0,item);
+}
+}
+console.log("to be passed",items);
 
 var x = document.getElementById("myAudio"); 
 var y = document.getElementById("beep"); 
 
-var news = document.getElementsByClassName("tinder--cards")[0];
-var items = json.items;
+var news = document.getElementsByClassName("tinder--cards")[0];                                                                               
 var player = [];
 var br,br1;
 for(var i = 0; i < items.length; i++) {
@@ -90,7 +52,7 @@ var div = document.createElement("div");
 div.className += " tinder--card";
 if(items[i].img=='1'){
 var img = document.createElement("img");
-img.src = items[i].exerciseGif;
+img.src = items[i].videoId;
 }
 else {
 var img = document.createElement("div"); 
@@ -98,27 +60,26 @@ img.id = "ytplayer" + i;
 img.classList += "video";
 img.innerHTML = "Loading...";
 img.style="font-size:2em;font-weight:bold";
-if(items[i].muted=='1'){
-img.muted=false;
-img.id = 'mute';
-img.loop=false;
-}
-else{
-   img.muted = true;
-   img.loop=true;
-}
 img.width = "200";
 img.height = "250"; 
-img.src = items[i].exerciseGif;
-if(items[i].exerciseName!='Rest'){
-img.src = items[i].exerciseGif;
+if(items[i].excerciseName!='Rest'){
+img.src = items[i].videoId;
 }
 else {
-   img.src ="https://media.giphy.com/media/krP2NRkLqnKEg/giphy.mp4";
-      }
+img.style.display="none";
+img.innerHTML="<br><br>";
+      
 }
+}
+if(items[i].excerciseName!='Rest'){
 var h3 = document.createElement("h3");
-h3.innerHTML = items[i].exerciseName;
+h3.innerHTML = items[i].excerciseName;}
+else{
+  var h3 = document.createElement("h1");
+  h3.style.fontSize = "3em";
+  h3.style.marginTop = "10vh";
+h3.innerHTML = items[i].excerciseName;
+}
 br = document.createElement("br");
 br1 = document.createElement("br");
 
@@ -135,15 +96,14 @@ p.className +='controlls';
 var span = document.createElement("span");
 span.innerHTML = items[i].reps+" reps";
 p.append(span);}
-
 var p2 = document.createElement("p"); 
 if(items[i].upnext && i+1<items.length){
-// console.log("enters",items[i].upnext,items[i+1].exerciseName.split(":"));
-if(items[i+1].exerciseName.split(":")[1]){
+// console.log("enters",items[i].upnext,items[i+1].excerciseName.split(":"));
+if(items[i+1].excerciseName.split(":")[1]){
   // console.log(": in next");
-p2.innerHTML += "UP NEXT : " + items[i+1].exerciseName.split(":")[1];}
+p2.innerHTML += "UP NEXT : " + items[i+1].excerciseName.split(":")[1];}
 else {
-p2.innerHTML += "UP NEXT : " + items[i+1].exerciseName;
+p2.innerHTML += "UP NEXT : " + items[i+1].excerciseName;
 // console.log("no :",p2);
 }
 p2.style.color = "brown";
@@ -182,7 +142,7 @@ function loadVideo(i) {
         'controls': 1,           
         'showinfo': 0,
         'rel': 0},
-      videoId: items[i].exerciseGif,
+      videoId: items[i].videoId,
       events: {
         onReady : function(e) {
           console.log("Video Ready");
@@ -286,8 +246,9 @@ clearInterval(timeElapsed);
    minute = minute < 10 ? "0" + minute : minute;
    second = second < 10 ? "0" + second : second;
 var buttons = document.getElementsByClassName('tinder--buttons');
-newCards[0].childNodes[3].src = "workouts//completed.jpg";
-newCards[0].childNodes[7].innerHTML = "Workout Time : "+minute+":"+second ;
+console.log(newCards[0].childNodes);
+newCards[0].childNodes[3].innerHTML = "Workout Complete!" + "<br><br>Workout Name";
+newCards[0].childNodes[6].innerHTML = "Workout Time : "+minute+":"+second ;
 newCards[0].style.transform = 'translate(' + moveOutWidth + 'px, -100px) rotate(-30deg)'; 
 newCards[0].classList.remove('removed');
 initCards();
@@ -482,13 +443,12 @@ if (love) {
    //      console.log(document.getElementsByClassName("tinder--card")[index].childNodes);
    //      console.log(json.items[index-1],index,"passsed");
    seconds = json.items[index-1].time;
-      if(index-2>=0){
+      if(player[index-2]){
     player[index-2].pauseVideo();}
    time = setInterval( function() { 
        countdownSeconds(index); }, 1000 );
  }}}
    else {
-     player[index-2].pauseVideo();
      // player[index-1].playVideo();
 
        //  console.log(json.items[index1-1],index1,"passsed");
@@ -592,3 +552,9 @@ var boListener = createButtonListener(true,1);
 }
 
 }
+
+},
+error: function (xhr, status) {
+    alert("error");
+}
+});

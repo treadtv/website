@@ -43,7 +43,7 @@ app.get('/success',function(req, res, next) {
   res.render('success');
 });
 
-app.get('/workout',function(req, res, next) {
+app.get('/workout/:id',function(req, res, next) {
   res.render('workout');
 });
 
