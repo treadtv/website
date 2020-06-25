@@ -2,7 +2,7 @@ var url = window.location.href;
 var def = url.split("/")[4];
 console.log(url,def);
 $.ajax({
-  url: "https://cors-anywhere.herokuapp.com/https://boiling-depths-05067.herokuapp.com/submit/workout/"+def,
+  url: "https://cors-anywhere.herokuapp.com/https://tread-workout-builder.herokuapp.com/submit/workout/"+def,
   type: "GET",
   crossDomain: true,
   dataType: "json",
