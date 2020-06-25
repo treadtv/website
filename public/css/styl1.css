@@ -65,6 +65,7 @@ align-self :center;
   margin-top : -2vh;
   opacity: 0;
   transition: opacity 0.1s ease-in-out;
+  font-family: Poppins;
 }
 
 .loaded.tinder {
@@ -183,9 +184,9 @@ align-self :center;
 
 .tinder--card h3 {
   margin-top: 2vh;
-  font-size: 1.3em;
+  font-size: 1.8em;
   padding-bottom: 2vh;
-  color:orange;
+  color:#FFA259;
   pointer-events: none;
 }
 
@@ -199,7 +200,7 @@ align-self :center;
 }
 .tinder--card span {
   font-size: 2em;
-  color: green;
+  color: #4DD599;
   font-weight: bold;
 }
 

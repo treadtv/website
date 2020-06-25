@@ -14,10 +14,12 @@ var items = response.data.items;
 var json = response.data;
 var title = document.getElementById('title');
 title.innerHTML = json.timerName;
+var noEx = document.getElementById('noEx');
+noEx.innerHTML = items.length + " exercises";
 var desc = document.getElementById('desc');
 if(json.timerDescription){
 desc.innerHTML = json.timerDescription;}
-var dupITEMS = items.length;
+
 for(var j = 0; j < items.length; j++) 
 {
 console.log(items[j],j);
@@ -79,6 +81,7 @@ else{
   h3.style.fontSize = "3em";
   h3.style.marginTop = "10vh";
 h3.innerHTML = items[i].excerciseName;
+h3.style.color="#4DD599";
 }
 br = document.createElement("br");
 br1 = document.createElement("br");
@@ -247,8 +250,8 @@ clearInterval(timeElapsed);
    second = second < 10 ? "0" + second : second;
 var buttons = document.getElementsByClassName('tinder--buttons');
 console.log(newCards[0].childNodes);
-newCards[0].childNodes[3].innerHTML = "Workout Complete!" + "<br><br>Workout Name";
-newCards[0].childNodes[6].innerHTML = "Workout Time : "+minute+":"+second ;
+newCards[0].childNodes[3].innerHTML = "Workout Complete!" + "<br><br>"+json.timerName;
+newCards[0].childNodes[7].innerHTML = "Workout Time : "+minute+":"+second ;
 newCards[0].style.transform = 'translate(' + moveOutWidth + 'px, -100px) rotate(-30deg)'; 
 newCards[0].classList.remove('removed');
 initCards();
