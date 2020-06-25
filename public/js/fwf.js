@@ -249,7 +249,7 @@ clearInterval(timeElapsed);
    minute = minute < 10 ? "0" + minute : minute;
    second = second < 10 ? "0" + second : second;
 var buttons = document.getElementsByClassName('tinder--buttons');
-console.log(newCards[0].childNodes);
+newCards[0].childNodes[13].innerHTML = "";
 newCards[0].childNodes[3].innerHTML = "Workout Complete!" + "<br><br>"+json.timerName;
 newCards[0].childNodes[7].innerHTML = "Workout Time : "+minute+":"+second ;
 newCards[0].style.transform = 'translate(' + moveOutWidth + 'px, -100px) rotate(-30deg)'; 
