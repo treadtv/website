@@ -253,7 +253,7 @@ console.log(newCards[0].childNodes);
 newCards[0].childNodes[15].innerHTML = "";
 newCards[0].childNodes[3].innerHTML = "Workout Complete!";
 newCards[0].childNodes[3].style.color = "#4DD599";
-newCards[0].childNodes[4].innerHTML = json.timerName;
+newCards[0].childNodes[4].innerHTML = "<br>"+json.timerName;
 newCards[0].childNodes[9].innerHTML = "Workout Time : "+minute+":"+second ;
 newCards[0].style.transform = 'translate(' + moveOutWidth + 'px, -100px) rotate(-30deg)'; 
 newCards[0].classList.remove('removed');
@@ -264,6 +264,7 @@ pp.onclick = function charge() {
 
 //  console.log("video is playing", videoisPlaying);
 cords = document.querySelectorAll('.tinder--card:not(.removed)'); 
+
 var status = cords[0].querySelectorAll('.status')[0];
 var parent = cords[0].parentNode;
 // The equivalent of parent.children.indexOf(child)
@@ -429,17 +430,27 @@ else {
           pp1.classList.remove("fa-play");
           pp1.classList.add("fa-close");
 }
+
+if(!cRemoved){
+  cRemoved = card;
+}
 if (cwhere==1){
-card.classList.add('removed');
-if(cards[0].childNodes[0].tagName=='VIDEO'){
-cards[0].childNodes[0].pause();}}
-if (cwhere==2){
+card.classList.add('removed');}
+if (cwhere==2 && cRemoved){
 // console.log("yooh",cRemoved.childNodes);
 cRemoved.classList.toggle('removed');
 
 }
+console.log(card,cRemoved,love,cwhere);
 if (love) {
  card.style.transform = 'translate(' + moveOutWidth + 'px, -100px) rotate(-30deg)'; 
+
+ console.log("card removed",card2,"card added",card2);
+ if(card){
+ var status = card.querySelectorAll('.status')[0];
+ if(status){
+ status.innerHTML = "";}
+ }
    clearInterval(time);
 
    if(last!=1 && card2.childElementCount>6){
@@ -462,10 +473,16 @@ if (love) {
        time = setInterval( function() { 
        countdownSeconds(index1); }, 1000 )
    }
-} else {
+} 
+
+else {
  card.style.transform = 'translate(-' + moveOutWidth + 'px, -100px) rotate(30deg)';
    // console.log("kooooooo");
-   
+   if(cRemoved){
+   var status = cRemoved.querySelectorAll('.status')[0];
+   if(status){
+    status.innerHTML = "";}
+   }
    if(!time){
    clearInterval(time);
    time=null;
