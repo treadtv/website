@@ -9,10 +9,10 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
+  <link rel="stylesheet" href="./plugins/fancybox-master/jquery.fancybox.min.css">
   <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <script src="https://www.youtube.com/iframe_api"></script>
 
@@ -34,16 +34,18 @@
     <div class="tinder--card">
         <!-- <video autoplay loop muted playsinline nocontrols class="video_js"><source src="https://media.giphy.com/media/MWs2LslS7uPbZlqiaQ/giphy.mp4" type="video/mp4"></video> -->
             <h1 style="margin-top: 20vh;color:#FFA259" id="title">Sample Workout</h1><p id="noEx" style="color:#6095FF"></p><br>
-            <p id="desc" style="color:black"></p> <br><br><br><br><br>
-    <h4 id="status" style="margin-top: 8vh">powered by <a href="https://treadapp.co"> tread</a> </h4>
-    </div>
+            <p id="desc" style="color:black"></p> <br><br><br>
+            <a data-fancybox href="https://www.youtube.com/watch?v=TzVKZNtydcc">How it works?</a><br><br>
+    <h4 id="status" style="margin-top: 6vh">powered by <a target="_blank" href="https://treadapp.co"> tread</a> </h4>
+     
+</div>
 
   </div>
 
   <div class="tinder--buttons">
-    <button id="nope"><i class="fa fa-toggle-left"></i></button>
+    <button id="nope"><i class="fa fa-toggle-left" style="color:#FFA259"></i></button>
     <button id="pp"><i id="pp1" class="fa fa-play"></i></button>
-    <button id="love"><i class="fa fa-toggle-right"></i></button>
+    <button id="love"><i class="fa fa-toggle-right" style="color:#FFA259"></i></button>
   </div>
 </div>
 
@@ -56,7 +58,10 @@
   <source src="countdown.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
+    
 
+
+<script src="./plugins/fancybox-master/jquery.fancybox.min.js"></script>
     
 
 

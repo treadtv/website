@@ -137,7 +137,7 @@ align-self :center;
   cursor: grab;
 }
  .controlls{
-   padding-top: 2vh;
+   padding-top: 1.5vh;
     pointer-events: none;}
 
 .tinder--card.pause{
@@ -183,9 +183,9 @@ align-self :center;
 }
 
 .tinder--card h3 {
-  margin-top: 2vh;
+  margin-top: 1.5vh;
   font-size: 1.8em;
-  padding-bottom: 2vh;
+  padding-bottom: 1.5vh;
   color:#FFA259;
   pointer-events: none;
 }
