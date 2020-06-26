@@ -144,7 +144,11 @@ function loadVideo(i) {
       playerVars: {
         'controls': 1,           
         'showinfo': 0,
-        'rel': 0},
+        'rel': 0,
+        'fs': 0,
+        'playsinline' : 1},
+        fs: "0",
+        playsinline : "1",
       videoId: items[i].videoId,
       events: {
         onReady : function(e) {
